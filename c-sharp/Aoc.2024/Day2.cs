@@ -3,19 +3,12 @@ using Aoc.Shared.Abstract;
 public class Day2 : IAocSolution
 {
     public int Day => 2;
-    private static FilePaths _filePaths = new FilePaths();
-    private static readonly string InputPath = _filePaths.InputDataPath(2);
-    private static readonly string SamplePath = _filePaths.SampleDataPath(2);
 
     private List<List<int>> GetReports()
     {
-        var reports = File.ReadAllLines(InputPath).Select(line => line.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(level => int.Parse(level)).ToList()).ToList();
+        var filePaths = new FilePaths();
+        var reports = File.ReadAllLines(filePaths.InputDataPath(Day)).Select(line => line.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(level => int.Parse(level)).ToList()).ToList();
         return reports;
-    }
-    
-    private string FormatReport(List<int> report)
-    {
-        return string.Join(" ", report);
     }
 
     private bool IsIncreasing(List<int> report)
