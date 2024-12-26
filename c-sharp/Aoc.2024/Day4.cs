@@ -11,7 +11,7 @@ public class Day4 : IAocSolution
         public char[][] Entries { get; } = Entries;
         private int _height = Entries.Length;
         private int _width = Entries[0].Length;
-
+    
         public string WordsFromPosition(int x, int y, int length)
         {
             List<string> words = [];

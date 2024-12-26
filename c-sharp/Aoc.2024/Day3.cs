@@ -25,7 +25,7 @@ public class Day3 : IAocSolution
 
     private (string instruction, string remaining) ExtractInstruction(string instructions, bool enabled)
     {
-        string delimiter = enabled ? @"don't()" : @"do()";
+        string delimiter = enabled ? @"don't\(\)" : @"do\(\)";
         Match match = Regex.Match(instructions, delimiter);
         if (match.Success)
         {

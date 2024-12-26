@@ -11,8 +11,8 @@ class Program
     {
         var container = BuildContainer();
 
-        container.Resolve<IAocSolutionRunner>().RunPart1();
-        container.Resolve<IAocSolutionRunner>().RunPart2();
+        container.Resolve<IAocSolutionRunner>().RunPart1(3);
+        container.Resolve<IAocSolutionRunner>().RunPart2(3);
     }
 
     private static Autofac.IContainer BuildContainer()
